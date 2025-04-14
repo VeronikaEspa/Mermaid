@@ -1,0 +1,20 @@
+stateDiagram-v2
+  [*] --> Creada
+
+  Creada --> Validada : validar datos
+  Validada --> Aprobada : aprobación automática o manual
+  Aprobada --> Registrada : guardar en libro contable
+  Registrada --> Notificada : enviar notificación a partes
+
+  Notificada --> [*]
+
+  Creada --> Rechazada : error en validación
+  Validada --> Rechazada : política de empresa
+
+  Rechazada --> [*]
+
+  %% Aplicamos clase solo al nodo Rechazada
+  class Rechazada redState
+
+  %% Definimos estilo visual del nodo
+  classDef redState fill:#f8d7da,stroke:#dc3545,color:#721c24,stroke-width:2px;

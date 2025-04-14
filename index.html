@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Diagrama con Mermaid</title>
+  <title>Diagramas Mermaid</title>
   <style>
     body {
       font-family: sans-serif;
@@ -15,25 +15,49 @@
       border: 1px solid #ccc;
       padding: 1rem;
       border-radius: 8px;
+      margin-bottom: 2rem;
     }
   </style>
 </head>
 <body>
 
-  <h1>Ejemplo de Diagrama Mermaid</h1>
+  <h1>Diagramas - Finanzas</h1>
 
-  <div class="mermaid">
-    graph TD
-      A[Inicio] --> B[Proceso]
-      B --> C{¿Condición?}
-      C -->|Sí| D[Fin]
-      C -->|No| E[Repetir]
-  </div>
+  <div id="contenedor-diagramas"></div>
 
   <script type="module">
     import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-    mermaid.initialize({ startOnLoad: true });
-  </script>
 
+    const archivos = [
+      { nombre: 'Modelo de Dominio', archivo: 'modelo-dominio.mmd' },
+      { nombre: 'Diagrama de Clases', archivo: 'diagrama-clases.mmd' },
+      { nombre: 'Diagrama de Objetos', archivo: 'diagrama-objetos1.mmd' },
+      { nombre: 'Diagrama de Estados', archivo: 'diagrama-estados.mmd' },
+    ];
+
+    mermaid.initialize({ startOnLoad: false });
+
+    const contenedor = document.getElementById('contenedor-diagramas');
+
+    archivos.forEach(async ({ nombre, archivo }) => {
+      const response = await fetch(archivo);
+      const texto = await response.text();
+
+      const id = `mermaid-${archivo.replace(/[^a-zA-Z]/g, '')}-${Date.now()}`;
+      const contenedorIndividual = document.createElement('div');
+      contenedorIndividual.className = 'mermaid';
+      contenedorIndividual.id = id;
+      contenedorIndividual.textContent = texto;
+
+      const titulo = document.createElement('h2');
+      titulo.textContent = nombre;
+
+      contenedor.appendChild(titulo);
+      contenedor.appendChild(contenedorIndividual);
+
+      // Renderiza el diagrama
+      mermaid.run({ nodes: [contenedorIndividual] });
+    });
+  </script>
 </body>
 </html>
