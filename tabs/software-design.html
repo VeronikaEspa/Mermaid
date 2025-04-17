@@ -1,0 +1,50 @@
+<p class="mb-6 text-justify">
+    Esta sección detalla el modelo de dominio, el diagrama de clases, y otras visualizaciones estructurales y de comportamiento que sustentan la arquitectura lógica del sistema.
+    Estas representaciones permiten comprender cómo interactúan las entidades clave dentro de la aplicación financiera diseñada para PYMES.
+  </p>
+  
+  <div class="mb-12">
+    <h2 class="text-xl font-bold text-indigo-800 mb-2">📘 Modelo del Dominio</h2>
+    <p class="mb-4">Este diagrama muestra una visión general de las entidades principales del sistema, como Empresa, Usuario, Cliente, Factura, entre otras. Representa cómo se relacionan entre sí, ayudando a visualizar la estructura conceptual completa.</p>
+    <div id="domain-model" class="mermaid bg-white shadow p-4 rounded border border-indigo-200"></div>
+  </div>
+  
+  <div class="mb-12">
+    <h2 class="text-xl font-bold text-indigo-800 mb-2">🧱 Diagrama de Clases</h2>
+    <p class="mb-4">Aquí se describen las propiedades y métodos de cada clase. Este diagrama es esencial para el diseño orientado a objetos, mostrando herencias, asociaciones y comportamientos clave del sistema.</p>
+    <div id="class-diagram" class="mermaid bg-white shadow p-4 rounded border border-indigo-200"></div>
+  </div>
+  
+  <div class="mb-12">
+    <h2 class="text-xl font-bold text-indigo-800 mb-2">🧍 Diagramas de Objetos</h2>
+    <p class="mb-4">Los diagramas de objetos representan ejemplos reales e instanciados de entidades del sistema. Son útiles para entender cómo se verían los datos cargados en el sistema durante su uso.</p>
+  
+    <h3 class="text-md font-semibold text-indigo-600 mt-4 mb-2">🏢 Empresa y Usuario</h3>
+    <p class="mb-2">Este diagrama ejemplifica una empresa real y su relación con un usuario con rol de administrador.</p>
+    <div id="company-object" class="mermaid bg-white shadow p-4 rounded border border-indigo-200"></div>
+  
+    <h3 class="text-md font-semibold text-indigo-600 mt-4 mb-2">🧾 Factura, Cliente y Proyecto</h3>
+    <p class="mb-2">Ejemplo de una factura emitida, asociada a un cliente y a un proyecto específico.</p>
+    <div id="invoice-object" class="mermaid bg-white shadow p-4 rounded border border-indigo-200"></div>
+  
+    <h3 class="text-md font-semibold text-indigo-600 mt-4 mb-2">📊 Reporte Mensual</h3>
+    <p class="mb-2">Visualiza cómo un reporte financiero puede estar vinculado a una empresa.</p>
+    <div id="report-object" class="mermaid bg-white shadow p-4 rounded border border-indigo-200"></div>
+  </div>
+  
+  <div class="mb-12">
+    <h2 class="text-xl font-bold text-indigo-800 mb-2">📈 Diagramas de Estados</h2>
+    <p class="mb-4">Estos diagramas muestran el ciclo de vida de las entidades más relevantes. Representan los distintos estados que puede tomar un objeto según acciones del sistema o del usuario.</p>
+  
+    <h3 class="text-md font-semibold text-indigo-600 mt-4 mb-2">👤 Usuario</h3>
+    <p class="mb-2">Desde el registro hasta su posible eliminación, pasando por activación o suspensión.</p>
+    <div id="user-state" class="mermaid bg-white shadow p-4 rounded border border-indigo-200"></div>
+  
+    <h3 class="text-md font-semibold text-indigo-600 mt-4 mb-2">🏗️ Proyecto</h3>
+    <p class="mb-2">Evolución de un proyecto desde su planificación hasta su finalización o cancelación.</p>
+    <div id="project-state" class="mermaid bg-white shadow p-4 rounded border border-indigo-200"></div>
+  
+    <h3 class="text-md font-semibold text-indigo-600 mt-4 mb-2">🧾 Factura</h3>
+    <p class="mb-2">Transición típica de una factura desde su estado en borrador hasta ser pagada, anulada o vencida.</p>
+    <div id="invoice-state" class="mermaid bg-white shadow p-4 rounded border border-indigo-200"></div>
+  </div>  

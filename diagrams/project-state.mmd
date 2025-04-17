@@ -1,0 +1,7 @@
+
+stateDiagram-v2
+    [*] --> Planificado
+    Planificado --> EnEjecucion: iniciar()
+    EnEjecucion --> Finalizado: cerrar()
+    EnEjecucion --> Cancelado: cancelar()
+    Finalizado --> Archivado: archivar()

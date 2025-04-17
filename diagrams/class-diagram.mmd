@@ -1,0 +1,45 @@
+
+classDiagram
+    class Factura {
+        -id: string
+        -monto: number
+        -estado: EstadoFactura
+        -fechaEmision: Date
+        -fechaVencimiento: Date
+        -entidadDestino: Cliente | Empresa
+        +emitir()
+        +registrarPago()
+        +anular()
+    }
+
+    class Cliente {
+        -idFiscal: string
+        -nombre: string
+        -email: string
+    }
+
+    class Proyecto {
+        -id: string
+        -nombre: string
+    }
+
+    class Empresa {
+        -idFiscal: string
+        -nombre: string
+        -monedas: string[]
+    }
+
+    class Usuario {
+        -nombre: string
+        -rol: Rol
+    }
+
+    class HistorialCambio {
+        -entidad: string
+        -cambio: string
+        -fecha: Date
+    }
+
+    Factura --> Cliente
+    Factura --> Proyecto
+    HistorialCambio --> Usuario

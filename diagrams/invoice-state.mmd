@@ -1,0 +1,9 @@
+
+stateDiagram-v2
+    [*] --> Borrador
+    Borrador --> Emitida: emitir()
+    Emitida --> Pagada: registrarPago()
+    Emitida --> Vencida: vencimiento()
+    Emitida --> Anulada: anular()
+    Vencida --> Pagada: registrarPago()
+    Borrador --> Anulada: anular()

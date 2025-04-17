@@ -1,0 +1,7 @@
+
+stateDiagram-v2
+    [*] --> Registrado
+    Registrado --> Verificado: verificaEmail()
+    Verificado --> Activo: activaCuenta()
+    Activo --> Suspendido: suspender()
+    Activo --> Eliminado: eliminar()

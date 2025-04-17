@@ -1,0 +1,18 @@
+classDiagram
+    class Factura123 {
+    numero = "F-001"
+    estado = "Emitida"
+    monto = 1500
+    }
+    
+    class ClienteJuan {
+    nombre = "Juan Pérez"
+    idFiscal = "12345678-9"
+    }
+    
+    class ProyectoCasa {
+        nombre = "Remodelación"
+    }
+
+    Factura123 --> ClienteJuan
+    Factura123 --> ProyectoCasa

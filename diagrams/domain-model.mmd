@@ -1,0 +1,100 @@
+classDiagram
+    class Empresa {
+        +idFiscal: string
+        +nombre: string
+        +monedas: string[]
+    }
+
+    class Usuario {
+        +nombre: string
+        +email: string
+        +rol: Rol
+    }
+
+    class Rol {
+        +nombre: string
+    }
+
+    class Factura {
+        +numero: string
+        +estado: string
+        +monto: number
+        +fecha: Date
+        +entidadDestino: string
+    }
+
+    class Gasto {
+        +monto: number
+        +fecha: Date
+        +categoria: Categoria
+        +tipo: string
+    }
+
+    class Ingreso {
+        +monto: number
+        +fecha: Date
+        +categoria: Categoria
+        +tipo: string
+    }
+
+    class Proyecto {
+        +nombre: string
+    }
+
+    class Cliente {
+        +idFiscal: string
+        +nombre: string
+        +email: string
+    }
+
+    class Reporte {
+        +tipo: string
+        +formato: string
+    }
+
+    class Alerta {
+        +mensaje: string
+        +fecha: Date
+        +vencimiento: Date
+    }
+
+    class Categoria {
+        +nombre: string
+    }
+
+    class Impuesto {
+        +tipo: string
+        +porcentaje: number
+    }
+
+    class Plantilla {
+        +nombre: string
+        +tipoEmpresa: string
+    }
+
+    class HistorialCambio {
+        +entidad: string
+        +cambio: string
+        +fecha: Date
+    }
+
+    Empresa --> Usuario
+    Empresa --> Factura
+    Empresa --> Gasto
+    Empresa --> Ingreso
+    Empresa --> Proyecto
+    Empresa --> Cliente
+    Empresa --> Reporte
+    Empresa --> Plantilla
+
+    Usuario --> Rol
+    Usuario --> HistorialCambio
+    Factura --> Cliente
+    Factura --> Proyecto
+    Factura --> Impuesto
+    Factura --> Alerta
+    Gasto --> Categoria
+    Gasto --> Alerta
+    Ingreso --> Categoria
+    Ingreso --> Alerta
+    HistorialCambio --> Usuario
